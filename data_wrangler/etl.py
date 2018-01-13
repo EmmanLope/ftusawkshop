@@ -2,10 +2,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_locations(df, engine):
-    locations = df[["continent", 
+    locations = df[["continent",
                     "country"]].drop_duplicates(
                     ).reset_index()
-                    locations.to_sql("Locations", engine, index= False)
+    locations.to_sql("Locations", engine, index= False)
     return locations
 
 def reshape_data(df):
